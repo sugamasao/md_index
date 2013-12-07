@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'md_index'
+
+MdIndex.run(ARGV[0])
