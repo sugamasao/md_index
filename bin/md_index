@@ -2,4 +2,9 @@
 
 require 'md_index'
 
+if ARGV[0] == '--help' || ARGV[0] == '-h'
+  MdIndex.usage
+  exit
+end
+
 MdIndex.run(ARGV[0])
