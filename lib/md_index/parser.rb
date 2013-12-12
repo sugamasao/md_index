@@ -6,6 +6,10 @@ module MdIndex
 
     def parse
       @lines.each do |line|
+
+        @inner_pre_tag = !@inner_pre_tag if pre?(line)
+        next if @inner_pre_tag
+
         title_object = title_line(line)
         if title_object
           output(title_object)
@@ -22,6 +26,11 @@ module MdIndex
             title: $2
         }
       end
+    end
+
+    def pre?(line)
+      return true if line =~ /^\`\`\`/
+      true if line =~ %r!</?pre>!
     end
 
     def output(title)
