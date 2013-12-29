@@ -48,9 +48,9 @@ module MdIndex
         when 3
           '項'
         when 4
-          '・'
+          '段'
         else
-          '■'
+          '・'
       end
     end
 
